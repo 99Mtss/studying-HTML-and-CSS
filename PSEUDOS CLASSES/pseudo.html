@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudo-Classe</title>
+    <style>
+        div{
+            display: inline-block;
+            background-color: lightblue;
+            border: 1px solid black;
+            text-align: center;
+            height: 200px;
+            width: 200px;
+            
+        }
+        div > p {
+            display: none;
+        }
+        div:hover > p{
+            display: inline-block;
+            color: white;
+            background-color: red;
+        }
+
+        div:hover{
+            color: red;
+        }
+
+
+        a:visited{
+            color: red;
+
+        }
+        a{
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover{
+            color: black;
+            text-decoration: underline;
+        }
+        a:active{
+            color: green;
+        }
+        a:after{
+            content: ' [Links]';
+            text-decoration: none;
+            font-weight: normal;
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div id="d1">01</div>
+    <div id="d2">02</div>
+    <div id="d3">03</div>
+
+
+    <h1>Exemplo hover</h1>
+    <P>Passe o mouse sobre o texto abaixo</P>
+    <div>
+        Passe o mouse aqui
+        <P>texto secreto...</P>
+    </div>
+
+    <!-- LINKS -->
+     <h1>Personalizando links</h1>
+     <ul>
+        <li> <a href="https://www.youtube.com/watch?v=vMlrcOVr7po&list=PLHz_AreHm4dlUpEXkY1AyVLQGcpSgVF8s&index=22" target="_blank">Youtube</a></li>
+        <li> <a href="https://www.twitch.tv/">Twitch</a></li>
+        <li><a href="https://open.spotify.com/search/doardit">Spotify</a></li>
+     </ul>
+</body>
+</html>

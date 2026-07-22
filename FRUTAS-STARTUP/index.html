@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Startup de Frutas | Catálogo, Estoque e Dashboard</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">🍍</div>
+      <div>
+        <div class="brand-title">FrutaNobre</div>
+        <div class="brand-sub">Catálogo • Estoque • Vendas & Lucro</div>
+      </div>
+    </div>
+
+    <div class="topbar-actions">
+      <button id="btnExport" class="btn btn-ghost" type="button">Exportar dados (JSON)</button>
+      <button id="btnReset" class="btn btn-danger" type="button">Resetar (demo)</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <aside class="sidebar">
+      <nav class="tabs" role="tablist" aria-label="Seções">
+        <button class="tab" role="tab" aria-selected="true" data-tab="catalogo" type="button">Catálogo</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="estoque" type="button">Estoque</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="vendas" type="button">Vender</button>
+        <button class="tab" role="tab" aria-selected="false" data-tab="dashboard" type="button">Dashboard</button>
+      </nav>
+
+      <section class="card mini-card">
+        <h3>Funcionários</h3>
+        <div class="field">
+          <label for="funcionarioSelect">Selecionar</label>
+          <select id="funcionarioSelect" class="input"></select>
+        </div>
+        <div class="muted">Use a aba <b>Vender</b> para registrar vendas do funcionário.</div>
+      </section>
+    </aside>
+
+    <section class="content">
+      <!-- CATÁLOGO -->
+      <section class="panel is-active" data-panel="catalogo">
+        <div class="panel-header">
+          <h2>Catálogo de Frutas</h2>
+          <p class="muted">Preços e descrição. (Dados de demonstração — editáveis no JS.)</p>
+        </div>
+
+        <div class="toolbar">
+          <div class="search">
+            <label class="sr-only" for="searchInput">Buscar</label>
+            <input id="searchInput" class="input" type="search" placeholder="Buscar por nome..." autocomplete="off" />
+          </div>
+          <div class="filters">
+            <button id="btnAddFruit" class="btn" type="button">Adicionar fruta</button>
+          </div>
+        </div>
+
+        <div id="fruitGrid" class="grid"></div>
+      </section>
+
+      <!-- ESTOQUE -->
+      <section class="panel" data-panel="estoque">
+        <div class="panel-header">
+          <h2>Estoque</h2>
+          <p class="muted">Quantidade disponível + alertas de baixo estoque.</p>
+        </div>
+
+        <div class="toolbar">
+          <div class="filters">
+            <button id="btnRestock" class="btn" type="button">Dar entrada (repor)</button>
+          </div>
+          <div class="filters">
+            <button id="btnLowStockOnly" class="btn btn-ghost" type="button">Somente baixo estoque</button>
+          </div>
+        </div>
+
+        <div id="stockGrid" class="grid"></div>
+      </section>
+
+      <!-- VENDER -->
+      <section class="panel" data-panel="vendas">
+        <div class="panel-header">
+          <h2>Registrar venda</h2>
+          <p class="muted">Registre quantidades por fruta e o sistema atualiza estoque, vendas e lucro.</p>
+        </div>
+
+        <div class="card">
+          <div class="form-row">
+            <div class="field">
+              <label for="saleFruitSelect">Fruta</label>
+              <select id="saleFruitSelect" class="input"></select>
+            </div>
+            <div class="field">
+              <label for="saleQty">Quantidade (un)</label>
+              <input id="saleQty" class="input" type="number" min="1" value="1" />
+            </div>
+            <div class="field">
+              <label for="salePriceOverride">Preço por un (opcional)</label>
+              <input id="salePriceOverride" class="input" type="number" min="0" step="0.01" placeholder="Usar preço do catálogo" />
+            </div>
+          </div>
+
+          <div class="form-actions">
+            <button id="btnAddSale" class="btn" type="button">Registrar venda</button>
+            <div class="muted" id="saleHint"></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 class="card-title">Itens do carrinho (mês atual)</h3>
+          <div class="muted">Isso mostra o que já foi registrado neste mês para calcular o dashboard.</div>
+          <div class="table-wrap">
+            <table class="table" aria-label="Vendas do mês">
+              <thead>
+                <tr>
+                  <th>Data</th>
+                  <th>Funcionário</th>
+                  <th>Fruta</th>
+                  <th>Qtd</th>
+                  <th>Preço</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody id="salesTbody"></tbody>
+            </table>
+          </div>
+          <div class="muted" id="salesEmpty">Nenhuma venda registrada neste mês ainda.</div>
+        </div>
+      </section>
+
+      <!-- DASHBOARD -->
+      <section class="panel" data-panel="dashboard">
+        <div class="panel-header">
+          <h2>Dashboard de Funcionários</h2>
+          <p class="muted">Vendas no mês e lucro estimado da empresa.</p>
+        </div>
+
+        <div class="card">
+          <div class="dashboard-top">
+            <div class="field">
+              <label for="monthSelect">Mês</label>
+              <input id="monthSelect" class="input" type="month" />
+            </div>
+
+            <div class="kpis">
+              <div class="kpi">
+                <div class="kpi-label">Vendas (R$)</div>
+                <div class="kpi-value" id="kpiSales">0,00</div>
+              </div>
+              <div class="kpi">
+                <div class="kpi-label">Custo (R$)</div>
+                <div class="kpi-value" id="kpiCost">0,00</div>
+              </div>
+              <div class="kpi">
+                <div class="kpi-label">Lucro (R$)</div>
+                <div class="kpi-value" id="kpiProfit">0,00</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-wrap" style="margin-top:14px;">
+            <table class="table" aria-label="Resumo por funcionário">
+              <thead>
+                <tr>
+                  <th>Funcionário</th>
+                  <th>Qtd vendida</th>
+                  <th>Vendas (R$)</th>
+                  <th>Custo (R$)</th>
+                  <th>Lucro (R$)</th>
+                </tr>
+              </thead>
+              <tbody id="dashTbody"></tbody>
+            </table>
+          </div>
+
+          <div class="muted" id="dashEmpty">Nenhuma venda neste mês.</div>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <!-- MODAL: adicionar fruta -->
+  <div id="modalFruit" class="modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalFruitTitle">
+      <div class="modal-header">
+        <h3 id="modalFruitTitle">Adicionar fruta</h3>
+        <button class="modal-close" type="button" aria-label="Fechar">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-row">
+          <div class="field">
+            <label for="fruitName">Nome</label>
+            <input id="fruitName" class="input" type="text" placeholder="Ex: Morango" />
+          </div>
+          <div class="field">
+            <label for="fruitPrice">Preço de venda (R$)</label>
+            <input id="fruitPrice" class="input" type="number" min="0" step="0.01" />
+          </div>
+          <div class="field">
+            <label for="fruitCost">Custo estimado (R$ por un)</label>
+            <input id="fruitCost" class="input" type="number" min="0" step="0.01" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label for="fruitStock">Estoque inicial (un)</label>
+            <input id="fruitStock" class="input" type="number" min="0" step="1" />
+          </div>
+          <div class="field">
+            <label for="fruitLowStock">Alerta baixo estoque (un)</label>
+            <input id="fruitLowStock" class="input" type="number" min="1" step="1" />
+          </div>
+        </div>
+        <div class="muted">Você pode alterar preços e custos depois abrindo o arquivo <b>app.js</b>.</div>
+      </div>
+      <div class="modal-footer">
+        <button id="btnModalFruitSave" class="btn" type="button">Salvar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: reposição -->
+  <div id="modalRestock" class="modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalRestockTitle">
+      <div class="modal-header">
+        <h3 id="modalRestockTitle">Dar entrada (repor) no estoque</h3>
+        <button class="modal-close" type="button" aria-label="Fechar">✕</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-row">
+          <div class="field">
+            <label for="restockFruitSelect">Fruta</label>
+            <select id="restockFruitSelect" class="input"></select>
+          </div>
+          <div class="field">
+            <label for="restockQty">Quantidade (un)</label>
+            <input id="restockQty" class="input" type="number" min="1" value="10" />
+          </div>
+        </div>
+        <div class="muted">Isso aumenta o estoque disponível imediatamente.</div>
+      </div>
+      <div class="modal-footer">
+        <button id="btnModalRestockSave" class="btn" type="button">Repor</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: toast -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
+
