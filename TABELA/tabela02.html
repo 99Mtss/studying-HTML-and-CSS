@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas grandes</title>
+    <style>
+        /* CONFIGURAÇÃO DO CORPO */
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+
+
+        /* CONFIGURAÇÃO DE CONTEUDO */
+        table{
+            margin:auto;
+            width: 400px;
+            border-collapse: collapse;
+            position: relative;
+        }
+        td, th{
+            padding: 10px;
+        }
+        thead > tr > th{
+            position: sticky;
+            top: -1px;
+            
+        }
+        caption{
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+
+        /* CONFIGURAÇÃO DE CORES */
+        td, th{
+            border: 1px solid rgb(3, 3, 3);
+        }
+        thead, tfoot{
+            background-color: rgb(44, 10, 66);
+            color: white;
+        }
+        thead > tr > th{
+            background-color: rgb(55, 3, 75);
+        }
+        caption{
+           background-color: rgb(76, 5, 143); 
+        }
+        td, th{
+            border: 1px solid rgb(3, 3, 3);
+        }
+        td.total{
+            background-color: green;
+            color: white;
+        }
+        h1{
+            background-color: rgb(157, 87, 236);
+        }
+        body{
+            background-color: rgb(118, 25, 172);
+            color: white;
+        }
+        /* efeito zebrado */
+        tbody > tr:nth-child(even){
+            background-color: rgba(131, 27, 126, 0.644);
+            font-weight: bold;
+        }
+        tbody > tr:nth-child(odd){
+            background-color: rgba(23, 3, 133, 0.644);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Uso de tabelas grandes</h1>
+    <!-- 
+        ANATOMIA PARA TABELAS GRANDES
+        TABLE
+            THEAD
+                TR, TD, TH
+            TBODY
+                TR, TD, TH
+            TFOOT
+                TR, TD, TH
+    -->
+    <table>
+        <caption>População por Estado</caption>
+        <thead>
+            <tr>
+                <th scope="col">Estado</th>
+                <th scope="col" style="width: 50px;">População</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>São Paulo</td>
+                <td>11.367,08</td>
+            </tr>
+            <tr>
+                <td>Rio de janeiro</td>
+                <td>12.589</td>
+            </tr>
+            <tr>
+                <td>Alagoas</td>
+                <td>19.290</td>
+            </tr>
+            <tr>
+                <td>Minas gerais</td>
+                <td>90.234</td>
+            </tr>
+            <tr>
+                <td>Aracaju</td>
+                <td>34.500</td>
+            </tr>
+            <tr>
+                <td>Minas gerais</td>
+                <td>90.234</td>
+            </tr>
+            <tr>
+                <td>LIMEIRA</td>
+                <td>34.500</td>
+            </tr>
+            <tr>
+                <td>OSASCO</td>
+                <td>90.234</td>
+            </tr>
+            <tr>
+                <td>BRANQUINHA</td>
+                <td>34.500</td>
+            </tr>
+            <tr>
+                <td>MURICI</td>
+                <td>90.234</td>
+            </tr>
+            <tr>
+                <td>SÃO JOSE DA LAJE</td>
+                <td>34.500</td>
+            </tr>
+
+            <tr>
+                <td>CAMPINA GRANDE</td>
+                <td>90.234</td>
+            </tr>
+            <tr>
+                <td>PIAUI</td>
+                <td>34.500</td>
+            </tr>
+            <tr>
+                <td>PENEDO</td>
+                <td>90.234</td>
+            </tr>
+            <tr>
+                <td>CHÃ PRETA</td>
+                <td>34.500</td>
+            </tr>
+            <tr>
+                <td>Santa catarina</td>
+                <td>90.234</td>
+            </tr>
+            <tr>
+                <td>Rio grande do sul</td>
+                <td>34.500</td>
+            </tr>
+            <tr>
+                <td>rondonia
+                <td>90.234</td>
+            </tr>
+            <tr>
+                <td>Maceio
+                <td>34.500</td>
+            </tr>
+            <tr>
+                <td>União dos palmares</td>
+                <td>90.234</td>
+            </tr>
+            <tr>
+                <td>Sergipe</td>
+                <td>34.500</td>
+            </tr>
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <th scope="row">Total de Habitantes</th>
+                <td class="total"><strong>148.450,00</strong></td>
+            </tr>
+        </tfoot>
+</body>
+</html>
