@@ -5,22 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>tabela teste</title>
     <style>
+
+        /* CONFIGURAÇÃO DE FORMATO */
         body{
             font-family: Arial, Helvetica, sans-serif;
         }
         table{
             width: 400px;
+            height: 400px;
             border-collapse: collapse;
         }
-        tr.linha{
-            background-color:green
-        }
+
+
+        /* CONFIGURAÇÃO DE CONTEUDO */
         td{
             border: 1px solid black;
             padding: 8px;
+
+            /* ALINHAMENTO HORIZONTAL(LEFT, RIGHT E CENTER) */
+            text-align:center;
+            /* ALINHAMENTO VERTICAL(TOP, MIDDLE E BOTTOM) */
+            vertical-align: middle;
         }
+
+
+        /* CONFIGURAÇÃO DE CORES */
+        tr.linha{
+            background-color:green
+        }        
         td.dado{
             background-color: red;
+        }
+        td.dado1{
+            background-color: green;
+        }
+        td.dado2{
+            background-color: yellow
         }
     </style>
 </head>
@@ -46,16 +66,16 @@
             <td>5</td>
         </tr>
         <!-- SEGUNDA LINHA -->
-        <tr class="linha">
+        <tr>
             <td>6</td>
-            <td>4</td>
+            <td class="dado2">4</td>
             <td>6</td>
         </tr>
         <!-- TERCEIRA LINHA -->
-        <tr class="linha">
-            <td>5,5</td>
-            <td>3</td>
-            <td>6</td>
+        <tr>
+            <td class="dado1">5,5</td>
+            <td>4,5</td>
+            <td class="dado1">6</td>
         </tr>
         <!-- QUARTA LINHA -->
         <tr>
