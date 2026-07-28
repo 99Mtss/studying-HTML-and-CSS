@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrupando Colunas</title>
+    <style>
+                /* CONFIGURAÇÃO DE CONTEUDO */
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+        h1{
+            background-color: aqua;
+            text-align: center;
+        }
+
+        /* CONFIGURAÇÃO DE TABELA */
+        table{
+            border-collapse: collapse;
+            width: 500px;
+            margin: auto;
+        }
+        caption{
+            font-size: 1.3em;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        /* CONFIGURAÇÃO DE DADOS */
+        td,th{
+            border: 1px solid grey;
+            padding: 10px;
+            text-align: center;
+            
+        }
+        .Amor{
+            background-color: pink;
+        }
+        col.cNome{
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Tabela base
+    </h1>
+    <table>
+        <colgroup>
+            <col class="cNome">
+            <col class="cSexo">
+            <col class="cIdade">
+            <col class="cProfissão">
+        </colgroup>
+        <caption>Cadastro</caption>
+        <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Sexo</th>
+            <th scope="col">Idade</th>
+            <th scope="col">Profissão</th>
+        </tr>
+        <tr>
+            <td class="Amor" style="color: red;">Maria Eduarda (AMOR DA MINHA VIDA ❤️)</td>
+            <td class="Amor" style="color: red;">F</td>
+            <td class="Amor" style="color: red;">20</td>
+            <td class="Amor" style="color: red;">Professora</td>
+        </tr>
+        <tr>
+            <td>Andre</td>
+            <td>M</td>
+            <td>20</td>
+            <td>Entregador</td>
+        </tr>
+        <tr>
+            <td>Marcelo</td>
+            <td>M</td>
+            <td>21</td>
+            <td>Pedreiro</td>
+        </tr>
+        <tr>
+            <td>Alex</td>
+            <td>M</td>
+            <td>22</td>
+            <td>Designer</td>
+        </tr>
+        <tr>
+            <td>Fabiana</td>
+            <td>F</td>
+            <td>19</td>
+            <td>Professora</td>
+        </tr>
+        <tr>
+            <td>Mariana</td>
+            <td>F</td>
+            <td>20</td>
+            <td>Atendente</td>
+        </tr>
+        <tr>
+            <td>Gabrielly</td>
+            <td>F</td>
+            <td>19</td>
+            <td>Venderoa</td>
+        </tr>
+        <tr>
+            <td>Duda</td>
+            <td>F</td>
+            <td>20</td>
+            <td>Cozinheira</td>
+        </tr>
+        <tr>
+            <td>Thays</td>
+            <td>F</td>
+            <td>19</td>
+            <td>PErsonal</td>
+        </tr>
+
+    </table>
+</body>
+</html>
