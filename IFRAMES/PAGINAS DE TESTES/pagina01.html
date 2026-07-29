@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabelas Rsponisivas</title>
+    <style>
+                       /* CONFIGURAÇÃO DE CONTEUDO */
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            
+        }
+        h1{
+            background-color: aqua;
+            text-align: center;
+        }
+
+        /* CONFIGURAÇÃO DE TABELA */
+        table{
+            border-collapse: collapse;
+            width: 800px;
+            margin: auto;
+        }
+        caption{
+            font-size: 1.3em;
+            font-weight: bold;
+            padding: 10px;
+        }
+
+        /* CONFIGURAÇÃO DE DADOS */
+        td,th{
+            border: 1px solid grey;
+            padding: 10px;
+            text-align: center;
+            
+        }
+        .Amor{
+            background-color: pink;
+        }
+        col.cNome{
+            background-color: aquamarine;
+        }
+        div#conteiner{
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="conteiner">
+        <table>
+            <caption>Tabelas Responsivas</caption>
+            <thead>
+                <th>Produtos</th>
+                <th>jan</th>
+                <th>fev</th>
+                <th>mar</th>
+                <th>abri</th>
+                <th>mai</th>
+                <th>jun</th>
+                <th>julh</th>
+                <th>agos</th>
+                <th>set</th>
+                <th>out</th>
+                <th>nov</th>
+                <th>dez</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>SAMSUNG GALAXY S20</td>
+                    <td>01</td>
+                    <td>01</td>
+                    <td>01</td>
+                    <td>01</td>
+                    <td>01</td>
+                    <td>01</td>
+                    <td>01</td>
+                    <td>01</td>
+                    <td>01</td>
+                    <td>01</td>
+                    <td>01</td>
+                    <td>01</td>
+                </tr>
+                 <tr>
+                    <td>IPAD MINI</td>
+                    <td>02</td>
+                    <td>02</td>
+                    <td>02</td>
+                    <td>02</td>
+                    <td>02</td>
+                    <td>02</td>
+                    <td>02</td>
+                    <td>02</td>
+                    <td>02</td>
+                    <td>02</td>
+                    <td>02</td>
+                    <td>02</td>
+                </tr>
+                 <tr>
+                    <td>LAVA LOUÇA</td>
+                    <td>03</td>
+                    <td>03</td>
+                    <td>03</td>
+                    <td>03</td>
+                    <td>03</td>
+                    <td>03</td>
+                    <td>03</td>
+                    <td>03</td>
+                    <td>03</td>
+                    <td>03</td>
+                    <td>03</td>
+                    <td>03</td>
+                </tr>
+                 <tr>
+                    <td>AMAZON ECHO</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                </tr>
+                <colgroup>
+                    <col class="cNome">
+                    <col class="cSexo">
+                    <col class="cIdade">
+                    <col class="cProfissão">
+                </colgroup>
+                <caption>Cadastro</caption>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Idade</th>
+                    <th scope="col">Profissão</th>
+                    <th scope="col" colspan="9">Dona do meu coração</th>
+                </tr>
+                <tr>
+                    <td class="Amor" style="color: red;">Maria Eduarda (AMOR DA MINHA VIDA ❤️)</td>
+                    <td class="Amor" style="color: red;">F</td>
+                    <td class="Amor" style="color: red;">20</td>
+                    <td class="Amor" style="color: red;">Professora</td>
+                    <td class="Amor">01</td>
+                    <td class="Amor">01</td>
+                    <td class="Amor">01</td>
+                    <td class="Amor">01</td>
+                    <td class="Amor">01</td>
+                    <td class="Amor">01</td>
+                    <td class="Amor">01</td>
+                    <td class="Amor">01</td>
+                    <td class="Amor">01</td>
+                </tr>
+                <tr>
+                    <td>Andre</td>
+                    <td>M</td>
+                    <td>20</td>
+                    <td>Entregador</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                    
+                </tr>
+                <tr>
+                    <td>Marcelo</td>
+                    <td>M</td>
+                    <td>21</td>
+                    <td>Pedreiro</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    
+                </tr>
+                <tr>
+                    <td>Alex</td>
+                    <td>M</td>
+                    <td>22</td>
+                    <td>Designer</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    
+                </tr>
+                <tr>
+                    <td>Fabiana</td>
+                    <td>F</td>
+                    <td>19</td>
+                    <td>Professora</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    
+                </tr>
+                <tr>
+                    <td>Mariana</td>
+                    <td>F</td>
+                    <td>20</td>
+                    <td>Atendente</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    
+                    
+                </tr>
+                <tr>
+                    <td>Gabrielly</td>
+                    <td>F</td>
+                    <td>19</td>
+                    <td>Venderoa</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    
+                    
+                </tr>
+                <tr>
+                    <td>Duda</td>
+                    <td>F</td>
+                    <td>20</td>
+                    <td>Cozinheira</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    
+                    
+                </tr>
+                <tr>
+                    <td>Thays</td>
+                    <td>F</td>
+                    <td>19</td>
+                    <td>PErsonal</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    <td>04</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
