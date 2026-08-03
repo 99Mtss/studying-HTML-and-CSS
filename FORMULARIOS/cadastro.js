@@ -1,0 +1,1 @@
+console.log("Cadastro.js carregado com sucesso!")
