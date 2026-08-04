@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste formulario P/"EMAILS,TELEFONE"</title>
+    <style>
+        h1{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align:center;
+        }
+        form{
+            font-family: Arial, Helvetica, sans-serif;
+            text-align:center;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formulario de Mensagens online</h1>
+    <form action="" method="get">
+        <p>
+            <label for="iemail">E-mail: </label>
+            <input type="email" name="email" id="iemail" required placeholder="Digite seu Email" 
+            autocomplete="email" size="15">
+        </p>
+        <p>
+            <label for="itel">Telefone: </label>
+            <input type="tel" name="telefone" id="itel" required 
+            placeholder="Digite seu Telefone" size="15" autocomplete="tel-national" 
+            pattern="[0-9]{2}[0-9]{5}[0-9]{4}">
+        </p>
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+    </form>
+</body>
+</html>
