@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>teste formulario</h1>
+    <form action="" method="post" autocomplete="on">
+        <!-- SELECT -->
+        <p>
+            <label for="iest">Estado: </label>
+            <select name="estado" id="iest">
+                <option value=""selected>--Escolhar--</option>
+                <optgroup label="Região Quente">
+                    <option value="AL">Alagoas</option>
+                    <option value="AM">Amazonas</option>
+                    <option value="BA">Bahia</option>
+                </optgroup>
+
+                <optgroup label="Região Fria">
+                    <option value="CE">Ceará</option>
+                    <option value="DF">Distrito Federal</option>
+                    <option value="ES">Espírito Santo  </option>
+                </optgroup>
+            </select>
+        </p>
+
+        <!-- DATALIST -->
+        <p>
+            <label for="prof">Profissão: </label>
+            <input type="text" name="profissao" id="prof" list="lstprof">
+            <datalist id="lstprof">
+                <option value="adm">Administrador</option>
+                <option value="dev">Desenvolvedor</option>
+                <option value="des">Designer</option>
+                <option value="est">Estudante</option>
+            </datalist>
+        </p>
+        
+        <!-- TEXTAREA -->
+        <p>
+            <label for="imsg">Mensagem: </label> <br>
+            <textarea name="msg" id="imsg" cols="30" rows="10"></textarea>
+        </p>
+        <p>
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </p>
+    </form>
+</body>
+</html>
