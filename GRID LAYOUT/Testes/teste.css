@@ -1,0 +1,10 @@
+body{
+    background-color: lightgrey;
+    color: red;
+}
+
+div.container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: 100px 100px 100px;
+}
