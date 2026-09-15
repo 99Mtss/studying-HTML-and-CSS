@@ -3,23 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Grid Layout na prática</title>
+    <title>CSS Grid Layout na prática (Parte 4 - Fração)</title>
     <style>
         div.container{
-            
             border: 3px solid red;
-            height: 200px;
+            height: 300px;
 
             display: grid;
-            grid-template-columns: auto auto auto;
-            grid-template-rows: auto auto auto;
-            gap: 10px;
-            
-            align-items: normal;
-            justify-items: normal;
-            align-content: normal;
-            justify-content: normal;
+            grid-template-columns:  100px 20% 1fr 1fr;
+
+            place-items: stretch stretch;
+            place-content: stretch stretch;
         }
+
         div.item{
             border: 3px solid green;
             padding: 10px;
@@ -35,6 +31,8 @@
         <div class="item">E</div>
         <div class="item">F</div>
         <div class="item">G</div>
+        <div class="item">h</div>
+        <div class="item">I</div>
     </div>
 </body>
 </html>
