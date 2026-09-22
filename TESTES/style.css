@@ -1,0 +1,300 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+min-height: 100vh;
+
+
+background:
+    radial-gradient(circle at top left, #241044 0%, transparent 35%),
+    radial-gradient(circle at bottom right, #102a4d 0%, transparent 35%),
+    #0b0b0f;
+
+color: #ffffff;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+padding: 20px;
+
+
+}
+
+/* CONTAINER */
+
+.login-container {
+width: 100%;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+/* CAIXA DE LOGIN */
+
+.login-box {
+width: 100%;
+max-width: 420px;
+
+
+background: rgba(20, 20, 28, 0.92);
+
+padding: 40px;
+
+border-radius: 20px;
+
+border: 1px solid rgba(139, 92, 246, 0.25);
+
+box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.55),
+    0 0 40px rgba(124, 58, 237, 0.08);
+
+backdrop-filter: blur(10px);
+
+
+}
+
+/* CABEÇALHO */
+
+.login-header {
+text-align: center;
+margin-bottom: 32px;
+}
+
+.login-header h1 {
+font-size: 30px;
+margin-bottom: 8px;
+
+
+background: linear-gradient(
+    90deg,
+    #a855f7,
+    #6366f1
+);
+
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+
+}
+
+.login-header p {
+color: #9d9da8;
+font-size: 14px;
+}
+
+/* FORMULÁRIO */
+
+.login-form {
+display: flex;
+flex-direction: column;
+gap: 20px;
+}
+
+/* INPUTS */
+
+.input-group {
+display: flex;
+flex-direction: column;
+gap: 8px;
+}
+
+.input-group label {
+font-size: 14px;
+font-weight: 600;
+color: #dedee8;
+}
+
+.input-group input {
+width: 100%;
+height: 50px;
+
+
+padding: 0 15px;
+
+background: #0f0f15;
+color: #ffffff;
+
+border: 1px solid #30303b;
+border-radius: 10px;
+
+outline: none;
+
+font-size: 14px;
+
+transition: 0.25s;
+
+
+}
+
+.input-group input::placeholder {
+color: #666674;
+}
+
+.input-group input:focus {
+border-color: #8b5cf6;
+
+
+box-shadow:
+    0 0 0 3px rgba(139, 92, 246, 0.12);
+
+
+}
+
+/* OPÇÕES */
+
+.login-options {
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+
+font-size: 13px;
+
+
+}
+
+.remember {
+display: flex;
+align-items: center;
+gap: 7px;
+
+
+color: #aaaab5;
+
+cursor: pointer;
+
+
+}
+
+.remember input {
+accent-color: #8b5cf6;
+}
+
+.forgot-password {
+color: #a855f7;
+
+
+text-decoration: none;
+
+transition: 0.2s;
+
+
+}
+
+.forgot-password:hover {
+color: #c084fc;
+}
+
+/* BOTÃO */
+
+.login-button {
+width: 100%;
+height: 50px;
+
+
+border: none;
+border-radius: 10px;
+
+background: linear-gradient(
+    90deg,
+    #7c3aed,
+    #6366f1
+);
+
+color: #ffffff;
+
+font-size: 15px;
+font-weight: bold;
+
+cursor: pointer;
+
+transition: 0.25s;
+
+box-shadow:
+    0 8px 25px rgba(124, 58, 237, 0.25);
+
+
+}
+
+.login-button:hover {
+transform: translateY(-2px);
+
+
+box-shadow:
+    0 12px 30px rgba(124, 58, 237, 0.4);
+
+filter: brightness(1.08);
+
+
+}
+
+.login-button:active {
+transform: translateY(0);
+}
+
+/* CRIAR CONTA */
+
+.register {
+margin-top: 28px;
+
+
+text-align: center;
+
+font-size: 13px;
+
+color: #777783;
+
+
+}
+
+.register a {
+margin-left: 5px;
+
+
+color: #a855f7;
+
+text-decoration: none;
+
+font-weight: 600;
+
+
+}
+
+.register a:hover {
+color: #c084fc;
+text-decoration: underline;
+}
+
+/* RESPONSIVIDADE */
+
+@media (max-width: 480px) {
+
+
+body {
+    padding: 15px;
+}
+
+.login-box {
+    padding: 30px 22px;
+    border-radius: 16px;
+}
+
+.login-header h1 {
+    font-size: 26px;
+}
+
+.login-options {
+    gap: 10px;
+}
+
+.forgot-password {
+    font-size: 12px;
+}
+
+
+}

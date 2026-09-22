@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criando um Layout de Site</title>
+    <style>
+        .container{
+            display: grid;
+            grid-template-rows: 80px 40px 200px 40px;
+            grid-template-columns: 200px 150px;
+            gap: 5px;
+        }
+
+        .caixa{
+            background-color: grey;
+            border: 3px dashed black;
+            padding: 10px;
+            text-align: center;
+        }
+        #topo{
+            grid-area: 1/1/2/-1;
+        }
+        #menu{
+        grid-area: 2/1/3/-1;
+        }
+        #principa{
+            grid-area: 3/1/-2/2;
+        }
+        #secundario{
+            grid-area: 3/-2/-2/-1;
+        }
+        #rodape{
+            grid-area: -2/1/-1/-1;
+        }
+         
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="caixa" id="topo">entrada</div>
+        </header>
+
+        <nav>
+            <div class="caixa" id="menu">opçaoes</div>
+        </nav>
+
+        <main>
+            <div class="caixa" id="principal">cardapio</div> 
+        </main>
+
+        <aside>
+            <div class="caixa" id="secundario">cardapio 2</div>
+        </aside> 
+
+        <footer>
+            <div class="caixa" id="rodape">rede socias</div>
+        </footer> 
+        
+    </div>
+</body>
+</html>
